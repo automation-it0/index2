@@ -1,334 +1,24 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color:#fff;
-}
-html{
-  scroll-behavior: smooth;
-  background-color: #485461;
-  background-image: linear-gradient(135deg, #747a85 0%, #8f7e7e 74%);
-  width:100%;
-  min-height: 100%;
-  max-height: 100%;
-  min-width:350px;
-}
-body{
-  width:100%;
-  min-height:100%;
-  opacity: 0;
-  transition: all 2s;
-  user-select: none;
-  min-width:350px;
-}
-
-body,
-button {
-  font-family: "Poppins", sans-serif;
-}
-.container {   
-  display:flex;
-  overflow-x: hidden;
-  transform-style: preserve-3d;
-}
-
-.logo {
-  font-size: 1.12rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  line-height: 4rem;
-  padding-left: 15px;
-}
-
-.logo span {
-  font-weight: 300;
-}
-
-.hamburger-menu {
-  height: 4rem;
-  width: 3rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position:fixed;
-  right:0;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.bar {
-  width: 1.9rem;
-  height: 1.5px;
-  border-radius: 2px;
-  background-color: #eee;
-  transition: 0.5s;
-  position: relative;
-}
-
-.bar:before,
-.bar:after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background-color: #eee;
-  transition: 0.5s;
-}
-.bar:before {
-  transform: translateY(-9px);
-}
-
-.bar:after {
-  transform: translateY(9px);
-}
-
-.container.active .bar {
-  transform: rotate(360deg);
-  background-color: transparent;
-}
-
-.container.active .bar:before {
-  transform: translateY(0) rotate(45deg);
-}
-
-.container.active .bar:after {
-  transform: translateY(0) rotate(-45deg);
-}
-
-.container.active .main {
-  animation: main-animation 0.5s ease;
-  cursor: pointer;
-  transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-}
-.menu1{
-  position: absolute;
-  width:0px;
-  height:100%;
-  background-color:#fff;
-  overflow: hidden;
-  transition:all 0.5s;
-  z-index: 2;
-}
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
-.logo br{
-  height:1px;
-  margin:0;
-  padding:0;
-  width:1px;
-}
-lottie-player{
-  max-height: 400px;
-  max-width: 400px;
-  z-index:10;
-  overflow: hidden;
-}
-.menu1 *{
-  z-index: 1;
-  color:rgb(0, 0, 0);
-}
-.sep{
-  height:2px;
-  background-color:#545454;
-  width:95%;
-  margin:auto;
-  border-radius: 10px;
-  z-index:1;
-}
-.sep2{
-  height:1px;
-  background-color:#5454548a;
-  width:80%;
-  margin:auto;
-  border-radius: 10px;
-  z-index:1;
-}
-#moveelem{
-  transition: all 1s;
-}
-.menu1 .logo{
-  min-width: 220px;
-  text-decoration:none;
-}
-.menu1 .logo a{
-  text-decoration: none;
-  width:100%;
-}
-.end{
-  left:0;
-  right:0;
-  margin:auto;
-  width:200px;
-  margin:auto;
-  position: absolute;
-  bottom:10px;
-  font-size: 12px;
-}
-.end span{
-  float:right;
-}
-.bottomannounce{
-  position: absolute;
-  width:90%;
-  height:80px;
-  padding:20px;
-  top:0;
-  left:0;
-  right:0;
-  margin:auto;
-  background-color: rgba(204, 32, 32, 0.781);
-  margin-bottom:10px;
-  border-radius: 10px;
-  display:flex;
-  opacity:0;
-  transition: all 0.1s;
-  display:none;
-}
-.inner1{
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png);
-  background-size: cover;
-  width:40px;
-  height:40px;
-}
-.other{
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.other *{color:black;}
-.other ._2{
-  font-size:12px;
-}
-#moveelem1{
-  transition:all 1s;
-}
-#moveelem2{
-  transition:all 1s;
-}
-#moveelem3{
-  transition:all 1s;
-}
-#moveelem4{
-  transition:all 1s;
-}
-#moveelem5{
-  transition:all 1s;
-}
-
-#moveelem,#moveelem1,#moveelem2,#moveelem3, #moveelem4, #moveelem5{
-  overflow:hidden;
-  width:220px;
-  max-height: 64px;
-}
-.index_sign{
-  padding:10px;
-}
-.desc_{
-  padding:15px;
-  text-align: justify;
-}
-.code{
-  text-align: left;
-  font-family: 'Space Mono', monospace;
-  color:gray;
-}
-.code_inner{
-  margin:10px;
-}
-.code_inner2{
-  float:center;
-  top: 50%;
-  left: 50%;
-  color:rgb(27, 27, 190);
-  display:none;
-}
-.hcode{
-  font-family: 'Space Mono', monospace;
-}
-.code_inner2 span{
-  color:rgb(0, 0, 0);
-  padding:5px;
-  border:1px solid black;
-}
-.code_inner span{
-  color:rgb(11, 204, 230);
-}
-.inner_tml{
-  color:rgb(63, 62, 62);
-}
-.listmain{
-  width:325px;
-  margin-left:auto;
-  margin-right:auto;
-}
-.listmain ul{
-  margin-left:20px;
-  margin-right:20px;
-}
-.listmain ul *{
-  font-family: "Montserrat";
-  text-transform: uppercase;
-}
-</style>
-</head>
-<body onload="MainTask()">
-  <div class="menu1" id="menu">
-    <h3 class="logo" style="color:black;min-width:220px;">Automation<span style="color:black">-Italia</span></h3>
-    <div class="sep"></div>
-    <h3 class="logo" id="moveelem4"><a href="javascript:Home()"><span>Home</span><span style="float:right;padding-right:10px;">></span></a></h3>
-    <div class="sep2"></div>
-    <h3 class="logo" id="moveelem"><a href="javascript:Assistenza()"><span>Assistenza</span><span style="float:right;padding-right:10px;">></span></a></h3>
-    <div class="sep2"></div>
-    <h3 class="logo" id="moveelem3"><a href="javascript:Prodotti()"><span>Prodotti</span><span style="float:right;padding-right:10px;">></span></a></h3>
-    <div class="sep2"></div>
-    <h3 class="logo" id="moveelem5"><a href="javascript:websites()"><span>Siti web</span><span style="float:right;padding-right:10px;">></span></a></h3>
-    <div class="sep2"></div>
-    <h3 class="logo" id="moveelem1"><a href="javascript:Business_()"><span>Business</span><span style="float:right;padding-right:10px;">></span></a></h3>
-    <div class="sep2"></div>
-    <h3 class="logo" id="moveelem2"><a href="javascript:condizioni__()"><span>Condizioni</span><span style="float:right;padding-right:10px;">></span></a></h3>
-    <p class="end">AUTOMATION™<span>DEVELOPERS</span></p>
-  </div>
-  <div class="container">
-    <h3 class="logo">Automation<span>-Italia</span></h3>
-    <div class="hamburger-menu" id="hm-mn">
-      <div class="bar"></div>
-    </div>
-  </div>
-  <div class="maincontainer" id="cnt">
-  </div>
-  <div class="bottomannounce" id="notification"></div>
-</body>
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><style>@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");* {padding: 0;margin: 0;box-sizing: border-box;color:#fff;}html{scroll-behavior: smooth;background-color: #485461;background-image: linear-gradient(135deg, #747a85 0%, #8f7e7e 74%);width:100%;min-height: 100%;min-width:350px;}body{width:100%;min-height:100%;opacity: 0;transition: all 2s;user-select: none;min-width:350px;}body,button {font-family: "Poppins", sans-serif;}.container { display:flex;overflow-x: hidden;transform-style: preserve-3d;}.logo {font-size: 1.12rem;font-weight: 600;text-transform: uppercase;letter-spacing: 1.5px;line-height: 4rem;padding-left: 15px;}.logo span {font-weight: 300;}.hamburger-menu {height: 4rem;width: 3rem;cursor: pointer;display: flex;align-items: center;justify-content: flex-end;position:fixed;right:0;margin-left: auto;margin-right: 20px;}.bar {width: 1.9rem;height: 1.5px;border-radius: 2px;background-color: #eee;transition: 0.5s;position: relative;}.bar:before,.bar:after {content: "";position: absolute;width: inherit;height: inherit;background-color: #eee;transition: 0.5s;}.bar:before {transform: translateY(-9px);}.bar:after {transform: translateY(9px);}.container.active .bar {transform: rotate(360deg);background-color: transparent;}.container.active .bar:before {transform: translateY(0) rotate(45deg);}.container.active .bar:after {transform: translateY(0) rotate(-45deg);}.container.active .main {animation: main-animation 0.5s ease;cursor: pointer;transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);}.menu1{position: absolute;width:0px;height:100%;background-color:#fff;overflow: hidden;transition:all 0.5s;z-index: 2;}@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');.logo br{height:1px;margin:0;padding:0;width:1px;}lottie-player{max-height: 400px;max-width: 400px;z-index:10;overflow: hidden;}.menu1 *{z-index: 1;color:rgb(0, 0, 0);}.sep{height:2px;background-color:#545454;width:95%;margin:auto;border-radius: 10px;z-index:1;}.sep2{height:1px;background-color:#5454548a;width:80%;margin:auto;border-radius: 10px;z-index:1;}#moveelem{transition: all 1s;}.menu1 .logo{min-width: 220px;text-decoration:none;}.menu1 .logo a{text-decoration: none;width:100%;}.end{left:0;right:0;margin:auto;width:200px;margin:auto;position: absolute;bottom:10px;font-size: 12px;}.end span{float:right;}.bottomannounce{position: absolute;width:90%;height:80px;padding:20px;top:0;left:0;right:0;margin:auto;background-color: rgba(204, 32, 32, 0.781);margin-bottom:10px;border-radius: 10px;display:flex;opacity:0;transition: all 0.1s;display:none;}.inner1{background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png);background-size: cover;width:40px;height:40px;}.other{padding-left: 10px;padding-right: 10px;}.other *{color:black;}.other ._2{font-size:12px;}#moveelem1{transition:all 1s;}#moveelem2{transition:all 1s;}#moveelem3{transition:all 1s;}#moveelem4{transition:all 1s;}#moveelem5{transition:all 1s;}#moveelem,#moveelem1,#moveelem2,#moveelem3, #moveelem4, #moveelem5{overflow:hidden;width:220px;max-height: 64px;}.index_sign{padding:10px;}.desc_{padding:15px;text-align: justify;}.code{text-align: left;font-family: 'Space Mono', monospace;color:gray;}.code_inner{margin:10px;}.code_inner2{float:center;top: 50%;left: 50%;color:rgb(27, 27, 190);display:none;}.hcode{font-family: 'Space Mono', monospace;}.code_inner2 span{color:rgb(0, 0, 0);padding:5px;border:1px solid black;}.code_inner span{color:rgb(11, 204, 230);}.inner_tml{color:rgb(63, 62, 62);}.listmain{width:325px;margin-left:auto;margin-right:auto;}.listmain ul{margin-left:20px;margin-right:20px;}.listmain ul *{font-family: "Montserrat";text-transform: uppercase;}</style></head><body onload="MainTask()"><div class="menu1" id="menu"><h3 class="logo" style="color:black;min-width:220px;">Automation<span style="color:black">-Italia</span></h3><div class="sep"></div><h3 class="logo" id="moveelem4"><a href="javascript:Home()"><span>Home</span><span style="float:right;padding-right:10px;">></span></a></h3><div class="sep2"></div><h3 class="logo" id="moveelem"><a href="javascript:Assistenza()"><span>Assistenza</span><span style="float:right;padding-right:10px;">></span></a></h3><div class="sep2"></div><h3 class="logo" id="moveelem3"><a href="javascript:Prodotti()"><span>Prodotti</span><span style="float:right;padding-right:10px;">></span></a></h3><div class="sep2"></div><h3 class="logo" id="moveelem5"><a href="javascript:websites()"><span>Siti web</span><span style="float:right;padding-right:10px;">></span></a></h3><div class="sep2"></div><h3 class="logo" id="moveelem1"><a href="javascript:Business_()"><span>Business</span><span style="float:right;padding-right:10px;">></span></a></h3><div class="sep2"></div><h3 class="logo" id="moveelem2"><a href="javascript:condizioni__()"><span>Condizioni</span><span style="float:right;padding-right:10px;">></span></a></h3><p class="end">AUTOMATION™<span>DEVELOPERS</span></p></div><div class="container"><h3 class="logo">Automation<span>-Italia</span></h3><div class="hamburger-menu" id="hm-mn"><div class="bar"></div></div></div><div class="maincontainer" id="cnt"></div><div class="bottomannounce" id="notification"></div></body>
 <script>
-        const hamburger_menu = document.querySelector(".hamburger-menu");
+    const hamburger_menu = document.querySelector(".hamburger-menu");
 const container = document.querySelector(".container");
 
 hamburger_menu.addEventListener("click", () => {
-    if(container.classList.toggle("active")===true){
-      document.getElementById("menu").style.width = "235px";
-      document.querySelector("html").style.height = "100%";
-      document.getElementById("cnt").style.filter = "blur(20px)";
-      document.body.style.height = "100%";
-      document.body.style.overflow = "hidden";
-    }
-    else {
-      document.getElementById("menu").style.width = "0px";
-      document.querySelector("html").style.height = "";
-      document.getElementById("cnt").style.filter = "";
-      document.body.style.height = "";
-      document.body.style.overflow = "";
-    };
-  }
+if(container.classList.toggle("active")===true){
+  document.getElementById("menu").style.width = "235px";
+  document.querySelector("html").style.height = "100%";
+  document.getElementById("cnt").style.filter = "blur(20px)";
+  document.body.style.height = "100%";
+  document.body.style.overflow = "hidden";
+}
+else {
+  document.getElementById("menu").style.width = "0px";
+  document.querySelector("html").style.height = "";
+  document.getElementById("cnt").style.filter = "";
+  document.body.style.height = "";
+  document.body.style.overflow = "";
+};
+}
 );
 const business = '<div class="listmain"><h1 style="font-size:28px">Business<span style="font-weight: 200;">-automation</span></h1><p style="text-align: justify;text-align-last: center;">Automation.it offre la possibilità a agenzie e startup di collaborare ricevendo gratuitamente tutti i nostri programmi (quelli necessari) in cambio di qualcosa, come una percentuale sulle vendite oppure dei profili Instagram, la ricompensa varia da accordo ad accordo, automation può disdire in qualunque momento l\'accordo senza dover dare spiegazioni al collaboratore, una volta terminata la collaborazione la licenza business dei programmi verrà revocaata e sarà possibile riaverla tramite un acquisto oppure un\'altra collaborazione, proviamo in qualunque modo a collaborare per aiutarti a far crescere il tuo fatturato, abbiamo tutti gli strumenti per una crescita sostanziale!</p></div>'
 const home = '<div class="code"><span class="code_inner"><<span>body</span>></span><br><span class="code_inner" style="padding-left: 25px;margin-right:0;"><<span>p</span>></span><span class="inner_tml">Prezzi convenienti</span><span class="code_inner" style="margin-left:0;"><&#47;<span>p</span>></span><br><span class="code_inner"><&#47;<span>body</span>></span></div><div class="code"><span class="code_inner2">Premi sul <span id="spj" onclick="SecondTask()">menù</span></span></div><br><h3 class="hcode" style="font-weight: 300;color:rgb(155, 29, 46);padding:10px;">console<span style="color:rgb(211, 211, 211)">.</span>log<span style="color:#fff">(<span style="color:rgb(18, 212, 18);">"Premi sul menù"</span>)</span></h3><br><p class="hcode" style="font-weight: 300;color:#485461;margin-left:10px;margin-right:10px;">.consulenze<span style="color:yellow">{<br><span style="color:aqua;padding-left: 20px;">python<span style="color:#485461;">:</span><span style="color:rgb(190, 32, 230)">si</span></span><br><span style="color:aqua;padding-left: 20px;">javascript<span style="color:#485461;">:</span><span style="color:rgb(190, 32, 230)">si</span></span><br><span style="color:aqua;padding-left: 20px;">html-css<span style="color:#485461;">:</span><span style="color:rgb(190, 32, 230)">si</span></span><br><span style="color:aqua;padding-left: 20px;">C++/C/C#<span style="color:#485461;">:</span><span style="color:rgb(190, 32, 230)">si</span></span><br><span style="color:aqua;padding-left: 20px;">Instagram<span style="color:#485461;">:</span><span style="color:rgb(190, 32, 230)">si</span></span><br><span style="color:aqua;padding-left: 20px;">crypto-nft-metaverse<span style="color:#485461;">:</span><span style="color:rgb(190, 32, 230)">si</span></span><br>}<span style="color:rgb(18, 212, 18);"> /* Ordina adesso! */</span></span></p><br><br><br><h1 style="margin-left: 10px;">Sconti natalizi</h1><p style="margin-left: 10px;">Fino al 60% su vari prodotti!</p><lottie-player src="https://assets8.lottiefiles.com/packages/lf20_9gmlwgi8.json"background="transparent"speed="1"style="width: 250px; height: 250px;margin:auto;" autoplay></lottie-player>';
@@ -336,73 +26,72 @@ const catalogo = '<div class="listmain"><h1>Catalogo</h1><ul><li>Suite automatio
 const condizioni = '<div class="listmain"><h1>Condizioni</h1><p style="text-align: justify;text-align-last: center;">Di base automation offre assistenza e aggiornamenti per sempre, quasi tutti i giorni della settimana, tranne festivi, se si acquista un sito ogni modifica in futuro costerà minimo 2.50€, offriamo la possibilità di rimborso entro 48H dall\'acquisto di un programma (siti web non si fa rimborso), e il rimborso viene fatto solo se il programma non funziona e il problema non può essere risolto (da 2 giorni dopo l\'acquisto ovviamente), si può fare richiesta di funzioni aggiuntive da aggiungere a un programma, spesso le funzioni aggiunte saranno gratuite, però funzioni più complesse (ad esempio un algoritmo di like, follow e altro ad un profilo prima di un direct) vengono a costare una specifica cifra, le funzioni aggiuntive non sono rimborsabili (se pagate), se non si ha licenza acquistata direttamente da automation non siamo tenuti a darti assistenza, i programmi non sono rivendibili perché hanno licenza applicata sopra e di conseguenza noi vediamo quando un bot viene acceso e con quale id licenza</p></div>'
 const siti = '<div class="listmain"><h1>Siti web</h1><p style="text-align:justify;text-align-last: center;">Hai bisogno di un sito web e-commerce, blog o di qualsiasi tipo creati programmando? Questa sezione fa apposta per te!</p><div class="sep" style="margin-top: 12px;"></div><h2>Sito base</h2><p style="text-align:justify;text-align-last: center;">Semplice sito senza registrazioni, fattibile su qualsiasi piattaforma (può essere anche messo su shopify), il costo di questo va dai 50 ai 100€, un semplicissimo blog con un paio di immagini e presentazioni, tema super personalizzabile ovviamente.</p><div class="sep" style="margin-top: 12px;"></div><h2>Sito avanzato</h2><p style="text-align:justify;text-align-last: center;">E-commerce complessi e blog per esperti, questo tipo di sito è fatto apposta per chi vuole creare da 0 un sito web, il prezzo va dai 75 ai 200€, super personalizzabile.</p><div class="sep" style="margin-top: 12px;"></div><h2>Web App</h2><p style="text-align:justify;text-align-last: center;">Un applicazione web con possibilità di login, adatto a qualunque tipo di obiettivo, esportabile in HTML (anche su host tipo shopify e wordpress), per business, a partire da 200€</p></div>'
 function MainTask(){
-  document.body.style.opacity = "1";
+document.body.style.opacity = "1";
 }
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function MainSleep(ms){
-  await sleep(ms)
+await sleep(ms)
 }
 async function Assistenza(){
-  document.getElementById("moveelem").style.paddingLeft = "400px";
-  await MainSleep(1000)
-  setTimeout(window.open("https://web.whatsapp.com/send?phone=393317704837&text&app_absent=0"),5000)
-  document.getElementById("moveelem").style.position = "";
-  document.getElementById("moveelem").style.paddingLeft = "15px";
+document.getElementById("moveelem").style.paddingLeft = "400px";
+await MainSleep(1000)
+setTimeout(window.open("https://web.whatsapp.com/send?phone=393317704837&text&app_absent=0"),5000)
+document.getElementById("moveelem").style.position = "";
+document.getElementById("moveelem").style.paddingLeft = "15px";
 }
 async function Business_(){
-  document.getElementById("moveelem1").style.paddingLeft = "400px";
-  document.getElementById("cnt").innerHTML = business;
-  await MainSleep(500)
-  document.getElementById("hm-mn").click()
-  await MainSleep(500)
-  document.getElementById("moveelem1").style.position = "";
-  document.getElementById("moveelem1").style.paddingLeft = "15px";
+document.getElementById("moveelem1").style.paddingLeft = "400px";
+document.getElementById("cnt").innerHTML = business;
+await MainSleep(500)
+document.getElementById("hm-mn").click()
+await MainSleep(500)
+document.getElementById("moveelem1").style.position = "";
+document.getElementById("moveelem1").style.paddingLeft = "15px";
 }
 async function websites(){
-  document.getElementById("moveelem5").style.paddingLeft = "400px";
-  document.getElementById("cnt").innerHTML = siti;
-  await MainSleep(500)
-  document.getElementById("hm-mn").click()
-  await MainSleep(500)
-  document.getElementById("moveelem5").style.position = "";
-  document.getElementById("moveelem5").style.paddingLeft = "15px";
+document.getElementById("moveelem5").style.paddingLeft = "400px";
+document.getElementById("cnt").innerHTML = siti;
+await MainSleep(500)
+document.getElementById("hm-mn").click()
+await MainSleep(500)
+document.getElementById("moveelem5").style.position = "";
+document.getElementById("moveelem5").style.paddingLeft = "15px";
 }
 async function condizioni__(){
-  document.getElementById("moveelem2").style.paddingLeft = "400px";
-  document.getElementById("cnt").innerHTML = condizioni;
-  await MainSleep(500)
-  document.getElementById("hm-mn").click()
-  await MainSleep(500)
-  document.getElementById("moveelem2").style.position = "";
-  document.getElementById("moveelem2").style.paddingLeft = "15px";
+document.getElementById("moveelem2").style.paddingLeft = "400px";
+document.getElementById("cnt").innerHTML = condizioni;
+await MainSleep(500)
+document.getElementById("hm-mn").click()
+await MainSleep(500)
+document.getElementById("moveelem2").style.position = "";
+document.getElementById("moveelem2").style.paddingLeft = "15px";
 };
 async function Prodotti(){
-  document.getElementById("moveelem3").style.paddingLeft = "400px";
-  document.getElementById("cnt").innerHTML = catalogo;
-  await MainSleep(500)
-  document.getElementById("hm-mn").click()
-  await MainSleep(500)
-  document.getElementById("moveelem3").style.position = "";
-  document.getElementById("moveelem3").style.paddingLeft = "15px";
+document.getElementById("moveelem3").style.paddingLeft = "400px";
+document.getElementById("cnt").innerHTML = catalogo;
+await MainSleep(500)
+document.getElementById("hm-mn").click()
+await MainSleep(500)
+document.getElementById("moveelem3").style.position = "";
+document.getElementById("moveelem3").style.paddingLeft = "15px";
 }
 async function Home(){
-  document.getElementById("moveelem4").style.paddingLeft = "400px";
-  document.getElementById("cnt").innerHTML = home;
-  await MainSleep(500)
-  document.getElementById("hm-mn").click();
-  await MainSleep(500)
-  document.getElementById("moveelem4").style.position = "";
-  document.getElementById("moveelem4").style.paddingLeft = "15px";
+document.getElementById("moveelem4").style.paddingLeft = "400px";
+document.getElementById("cnt").innerHTML = home;
+await MainSleep(500)
+document.getElementById("hm-mn").click();
+await MainSleep(500)
+document.getElementById("moveelem4").style.position = "";
+document.getElementById("moveelem4").style.paddingLeft = "15px";
 }
 function SecondTask(){
-  document.getElementById("spj").removeAttribute("onclick");
-  document.getElementById("hm-mn").click();
+document.getElementById("spj").removeAttribute("onclick");
+document.getElementById("hm-mn").click();
 }
 function After(){
-  document.getElementById("cnt").innerHTML = home;
+document.getElementById("cnt").innerHTML = home;
 }
 After()
-</script>
-</html>
+</script></html>
